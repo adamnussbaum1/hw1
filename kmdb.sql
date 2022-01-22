@@ -80,7 +80,7 @@ CREATE TABLE movies (
   id INTEGER PRIMARY KEY AUTOINCREMENT,
   title TEXT,
   year_released TEXT,
-  MPAA_rating TEXT
+  MPAA_rating TEXT,
   director_id TEXT
 );
 
@@ -103,9 +103,29 @@ CREATE TABLE characters (
   character_name TEXT
 );
 
+
+
 -- Insert data into your database that reflects the sample data shown above
 -- Use hard-coded foreign key IDs when necessary
 -- TODO!
+
+INSERT INTO movies (
+  title,
+  year_released,
+  MPAA_rating,
+  director_id
+)
+
+VALUES (
+  "Batman Begins",
+  "2005",
+  "PG-13",
+  "1"
+);
+
+SELECT title, year_released, MPAA_rating,director_id
+FROM movies;
+
 
 -- Prints a header for the movies output
 .print "Movies"
