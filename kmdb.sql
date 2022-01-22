@@ -99,7 +99,7 @@ CREATE TABLE actors (
 CREATE TABLE characters (
   id INTEGER PRIMARY KEY AUTOINCREMENT,
   actor_id TEXT,
-  movie_id TEXT
+  movie_id TEXT,
   character_name TEXT
 );
 
@@ -271,7 +271,190 @@ VALUES (
   "Hathaway"
 );
 
-SELECT title, year_released, MPAA_rating,director_id
+INSERT INTO characters (
+  actor_id,
+  movie_id,
+  character_name
+)
+
+VALUES (
+  "1",
+  "1",
+  "Bruce Wayne"
+);
+
+INSERT INTO characters (
+  actor_id,
+  movie_id,
+  character_name
+)
+
+VALUES (
+  "2",
+  "1",
+  "Alfred"
+);
+
+INSERT INTO characters (
+  actor_id,
+  movie_id,
+  character_name
+)
+
+VALUES (
+  "3",
+  "1",
+  "Ra's Al Ghul"
+);
+
+INSERT INTO characters (
+  actor_id,
+  movie_id,
+  character_name
+)
+
+VALUES (
+  "4",
+  "1",
+  "Rachel Dawes"
+);
+
+INSERT INTO characters (
+  actor_id,
+  movie_id,
+  character_name
+)
+
+VALUES (
+  "5",
+  "1",
+  "Comissioner Gordon"
+);
+
+INSERT INTO characters (
+  actor_id,
+  movie_id,
+  character_name
+)
+
+VALUES (
+  "1",
+  "2",
+  "Bruce Wayne"
+);
+
+INSERT INTO characters (
+  actor_id,
+  movie_id,
+  character_name
+)
+
+VALUES (
+  "6",
+  "2",
+  "Joker"
+);
+
+INSERT INTO characters (
+  actor_id,
+  movie_id,
+  character_name
+)
+
+VALUES (
+  "7",
+  "2",
+  "Harvey Dent"
+);
+
+INSERT INTO characters (
+  actor_id,
+  movie_id,
+  character_name
+)
+
+VALUES (
+  "2",
+  "2",
+  "Alfred"
+);
+
+INSERT INTO characters (
+  actor_id,
+  movie_id,
+  character_name
+)
+
+VALUES (
+  "8",
+  "2",
+  "Rachel Dawes"
+);
+
+INSERT INTO characters (
+  actor_id,
+  movie_id,
+  character_name
+)
+
+VALUES (
+  "1",
+  "3",
+  "Bruce Wayne"
+);
+
+INSERT INTO characters (
+  actor_id,
+  movie_id,
+  character_name
+)
+
+VALUES (
+  "5",
+  "3",
+  "Commissioner Gordon"
+);
+
+INSERT INTO characters (
+  actor_id,
+  movie_id,
+  character_name
+)
+
+VALUES (
+  "9",
+  "3",
+  "Bane"
+);
+
+INSERT INTO characters (
+  actor_id,
+  movie_id,
+  character_name
+)
+
+VALUES (
+  "10",
+  "3",
+  "John Blake"
+);
+
+INSERT INTO characters (
+  actor_id,
+  movie_id,
+  character_name
+)
+
+VALUES (
+  "11",
+  "3",
+  "Selina Kyle"
+);
+
+.mode columns
+.headers on
+
+SELECT id, title, year_released, MPAA_rating,director_id
 FROM movies;
 
 SELECT id, first_name, last_name
@@ -279,6 +462,9 @@ FROM directors;
 
 SELECT id, first_name, last_name
 FROM actors;
+
+SELECT id, actor_id, movie_id, character_name
+FROM characters;
 
 -- Prints a header for the movies output
 .print "Movies"
@@ -294,6 +480,7 @@ FROM actors;
 .print "========"
 .print ""
 
-
 -- The SQL statement for the cast output
 -- TODO!
+
+SELECT movies.title, actors.first_name, actors.last_name, 
