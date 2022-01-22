@@ -474,6 +474,10 @@ FROM characters;
 -- The SQL statement for the movies output
 -- TODO!
 
+SELECT movies.title, movies.year_released, movies.MPAA_rating, directors.first_name, directors.last_name
+FROM directors
+    INNER JOIN movies ON movies.director_id = directors.id;
+
 -- Prints a header for the cast output
 .print ""
 .print "Top Cast"
@@ -483,4 +487,7 @@ FROM characters;
 -- The SQL statement for the cast output
 -- TODO!
 
-SELECT movies.title, actors.first_name, actors.last_name, 
+SELECT movies.title, actors.first_name, actors.last_name, characters.character_name
+FROM characters
+    INNER JOIN actors ON characters.actor_id = actors.id
+    INNER JOIN movies ON characters.movie_id = movies.id;
