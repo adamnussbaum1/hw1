@@ -454,17 +454,18 @@ VALUES (
 .mode columns
 .headers on
 
-SELECT id, title, year_released, MPAA_rating,director_id
-FROM movies;
+--Added in the code below to check databases, but I turned it to text for the assignment
+--SELECT id, title, year_released, MPAA_rating,director_id
+--FROM movies;
 
-SELECT id, first_name, last_name
-FROM directors;
+--SELECT id, first_name, last_name
+--FROM directors;
 
-SELECT id, first_name, last_name
-FROM actors;
+--SELECT id, first_name, last_name
+--FROM actors;
 
-SELECT id, actor_id, movie_id, character_name
-FROM characters;
+--SELECT id, actor_id, movie_id, character_name
+--FROM characters;
 
 -- Prints a header for the movies output
 .print "Movies"
